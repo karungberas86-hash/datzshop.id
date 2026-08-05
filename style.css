@@ -223,3 +223,29 @@ font-weight:bold;
 border-radius:30px;
 font-size:13px;
 }
+#testimoni{
+    padding:80px 20px;
+}
+
+.testimonial-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.testimonial{
+    background:#161b22;
+    padding:25px;
+    border-radius:15px;
+    border:1px solid #00bfff;
+    box-shadow:0 0 20px rgba(0,191,255,.2);
+}
+
+.testimonial p{
+    margin:15px 0;
+    color:#ddd;
+}
+
+.testimonial strong{
+    color:#00bfff;
+}
