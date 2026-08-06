@@ -283,3 +283,30 @@ font-size:13px;
 .stat-card p{
     color:#ddd;
 }
+
+#faq{
+    padding:90px 20px;
+}
+
+#faq h2{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.faq-item{
+    background:#161b22;
+    border:1px solid rgba(0,191,255,.25);
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:20px;
+}
+
+.faq-item h3{
+    color:#00bfff;
+    margin-bottom:10px;
+}
+
+.faq-item p{
+    color:#d1d5db;
+    line-height:1.8;
+}
