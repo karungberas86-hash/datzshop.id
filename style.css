@@ -310,3 +310,28 @@ font-size:13px;
     color:#d1d5db;
     line-height:1.8;
 }
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#0b1120;
+    padding:60px 20px;
+    text-align:center;
+    border-top:1px solid rgba(0,191,255,.2);
+}
+
+footer h2{
+    color:#00bfff;
+    margin-bottom:15px;
+}
+
+footer p{
+    color:#cbd5e1;
+    margin:8px 0;
+}
+
+footer small{
+    display:block;
+    margin-top:25px;
+    color:#94a3b8;
+}
