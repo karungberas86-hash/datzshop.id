@@ -747,4 +747,27 @@ footer small{
         font-size: 18px;
     }
 }
+/* ===== NAVBAR MOBILE SCROLL ===== */
+
+@media (max-width: 600px) {
+
+    .navbar nav {
+        display: flex;
+        gap: 14px;
+        overflow-x: auto;
+        white-space: nowrap;
+        max-width: 100%;
+        padding-bottom: 4px;
+
+        scrollbar-width: none;
+    }
+
+    .navbar nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .navbar nav a {
+        flex-shrink: 0;
+    }
+}
 
