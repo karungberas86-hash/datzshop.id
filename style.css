@@ -770,4 +770,118 @@ footer small{
         flex-shrink: 0;
     }
 }
+/* ==============================
+   FINAL POLISH - DATZSHOP.ID
+   ============================== */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Link */
+a {
+    text-decoration: none;
+}
+
+/* Tombol lebih nyaman di HP */
+.btn,
+.btn-outline,
+.copy-btn {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn:active,
+.btn-outline:active,
+.copy-btn:active {
+    transform: scale(0.97);
+}
+
+/* Navbar mobile */
+@media (max-width: 600px) {
+
+    .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 999;
+    }
+
+    .navbar .container {
+        gap: 12px;
+    }
+
+    .navbar nav {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+    }
+
+    .navbar nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .navbar nav a {
+        flex-shrink: 0;
+    }
+
+    /* Hero */
+    .hero {
+        overflow: hidden;
+    }
+
+    .hero-image img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Produk */
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Pembayaran */
+    .payment-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* QRIS */
+    .qris-card {
+        grid-column: auto;
+    }
+
+    .qris-image {
+        width: min(100%, 320px);
+        height: auto;
+    }
+
+    /* FAQ */
+    .faq-item {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Footer */
+    footer {
+        overflow: hidden;
+    }
+}
+
+/* Mencegah gambar melebar keluar layar */
+img {
+    max-width: 100%;
+}
+
+/* Fokus tombol/link */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #00d4ff;
+    outline-offset: 3px;
+}
 
