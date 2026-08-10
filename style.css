@@ -884,4 +884,159 @@ button:focus-visible {
     outline: 2px solid #00d4ff;
     outline-offset: 3px;
 }
+/* ========================================
+   DATZSHOP.ID - PREMIUM FINISHING
+   ======================================== */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Semua tombol lebih premium */
+.btn,
+.btn-outline,
+.copy-btn {
+  transition: all 0.25s ease;
+}
+
+/* Efek tombol saat disentuh */
+.btn:active,
+.btn-outline:active,
+.copy-btn:active {
+  transform: scale(0.96);
+}
+
+/* Card produk lebih hidup */
+.product-card,
+.payment-card,
+.stat-card,
+.faq-item {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* Efek hover untuk perangkat yang mendukung */
+@media (hover: hover) {
+  .product-card:hover,
+  .payment-card:hover,
+  .stat-card:hover,
+  .faq-item:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* Logo navbar */
+.logo img {
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+/* Hero image lebih rapi */
+.hero-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Floating WhatsApp */
+.floating-wa {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 1000;
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.floating-wa:hover {
+  transform: translateY(-4px) scale(1.05);
+}
+
+/* Section lebih nyaman ketika diklik dari navbar */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Mobile finishing */
+@media (max-width: 600px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: min(92%, 520px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .hero-text h1 {
+    line-height: 1.15;
+  }
+
+  .hero-text p {
+    line-height: 1.7;
+  }
+
+  .btn,
+  .btn-outline {
+    min-height: 46px;
+  }
+
+  .product-card,
+  .payment-card {
+    border-radius: 16px;
+  }
+
+  .payment-note {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .qr-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  footer .container {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+/* Mengurangi animasi untuk pengguna yang memilih
+   reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
 
