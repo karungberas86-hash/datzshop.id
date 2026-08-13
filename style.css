@@ -1745,3 +1745,78 @@ section {
         font-size: 11px !important;
     }
 }
+/* ================================
+   FIX MENU KATEGORI - MOBILE
+================================ */
+
+@media (max-width: 768px){
+
+    .container{
+        width:92%;
+        max-width:100%;
+    }
+
+    /* Judul kategori */
+    .category-section{
+        padding:80px 0 50px;
+    }
+
+    /* Grid kategori */
+    .category-grid{
+        display:grid;
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+        gap:14px;
+        width:100%;
+    }
+
+    /* Kartu kategori */
+    .category-card{
+        width:100%;
+        min-width:0;
+        min-height:230px;
+        padding:18px 12px;
+        box-sizing:border-box;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:space-between;
+        text-align:center;
+    }
+
+    .category-card h3{
+        font-size:16px;
+        line-height:1.2;
+        margin:10px 0;
+    }
+
+    .category-card p{
+        font-size:12px;
+        line-height:1.5;
+        margin:0;
+    }
+
+    /* Icon */
+    .category-icon{
+        width:52px;
+        height:52px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        margin:auto;
+    }
+
+    /* Tombol */
+    .category-card a,
+    .category-card button{
+        width:100%;
+        max-width:140px;
+        min-height:42px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        box-sizing:border-box;
+        font-size:11px;
+        font-weight:700;
+    }
+
+}
