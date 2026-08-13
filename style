@@ -1559,3 +1559,189 @@ section {
     transform: translateY(-2px);
     box-shadow: 0 0 22px rgba(0, 217, 255, 0.35);
 }
+/* ============================= */
+/* MOBILE FIX DATZSHOP */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 92%;
+        max-width: 100%;
+    }
+
+    /* HERO */
+    .hero {
+        min-height: auto !important;
+        padding: 110px 0 50px !important;
+    }
+
+    .hero .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-content {
+        width: 100% !important;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 42px !important;
+        line-height: 1.05 !important;
+        margin-bottom: 15px;
+    }
+
+    .hero-content p {
+        font-size: 15px !important;
+        line-height: 1.6;
+    }
+
+    .hero-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    /* GAMBAR / ILUSTRASI HERO */
+    .hero-image,
+    .hero-visual,
+    .hero-art {
+        width: 100% !important;
+        max-width: 320px;
+        margin: 30px auto 0;
+    }
+
+    /* KATEGORI */
+    .category-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 12px !important;
+        width: 100% !important;
+    }
+
+    .category-card {
+        width: 100% !important;
+        min-width: 0 !important;
+        height: auto !important;
+        min-height: 210px;
+        padding: 16px 10px !important;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .category-card h3 {
+        font-size: 16px !important;
+        line-height: 1.2;
+        margin: 10px 0 8px;
+    }
+
+    .category-card p {
+        font-size: 12px !important;
+        line-height: 1.45;
+    }
+
+    .category-card .icon {
+        margin: 0 auto;
+    }
+
+    .category-card a,
+    .category-card button {
+        width: 100%;
+        font-size: 11px !important;
+        padding: 10px 5px !important;
+    }
+
+    /* JUDUL SECTION */
+    .section-title h2 {
+        font-size: 28px !important;
+        line-height: 1.2;
+    }
+
+    .section-title p {
+        font-size: 13px !important;
+    }
+
+    /* PRODUK */
+    .product-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+
+    .card {
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    .card h3 {
+        font-size: 20px !important;
+    }
+
+    .card h1 {
+        font-size: 32px !important;
+    }
+
+    /* TOMBOL BELI */
+    .card a,
+    .card button {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        color: white !important;
+        background: linear-gradient(90deg, #6c35ff, #4f46e5) !important;
+        padding: 12px 18px !important;
+        border-radius: 10px;
+        text-align: center;
+        font-weight: 700;
+        text-decoration: none;
+        margin-top: 15px;
+    }
+
+    /* PAYMENT */
+    .payment-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .payment-method {
+        width: 100% !important;
+    }
+
+    /* TESTIMONIAL */
+    .testimonial-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* NAVBAR */
+    .navbar {
+        padding: 12px 0 !important;
+    }
+
+    .navbar .container {
+        width: 92%;
+    }
+
+    .logo {
+        font-size: 16px !important;
+        gap: 7px;
+    }
+
+    .logo img {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    nav {
+        gap: 10px !important;
+    }
+
+    nav a {
+        font-size: 11px !important;
+    }
+}
