@@ -390,8 +390,8 @@
 <li>✔ Garansi</li>
 </ul>
 
-<a href="https://wa.me/6285782039166?text=Halo%20Datzshop,%20saya%20mau%20membeli%20PGSharp%20Premium%201%20Bulan%20Rp45.000." class="btn">
-BELI SEKARANG
+<a href="#pembayaran" onclick="pilihPaket('1 Bulan', 45000)">
+  BELI SEKARANG
 </a>
 
 </div>
@@ -408,8 +408,8 @@ BELI SEKARANG
 <li>✔ Garansi</li>
 </ul>
 
-<a href="https://wa.me/6285782039166?text=Halo%20Datzshop,%20saya%20mau%20membeli%20PGSharp%20Premium%203%20Bulan%20Rp125.000." class="btn">
-BELI
+<a href="#pembayaran" onclick="pilihPaket('3 Bulan', 125000)">
+  BELI SEKARANG
 </a>
 
 </div>
@@ -426,8 +426,8 @@ BELI
 <li>✔ Garansi</li>
 </ul>
 
-<a href="https://wa.me/6285782039166?text=Halo%20Datzshop,%20saya%20mau%20membeli%20PGSharp%20Premium%2012%20Bulan%20Rp450.000." class="btn">
-BELI SEKARANG
+<a href="#pembayaran" onclick="pilihPaket('12 Bulan', 450000)">
+  BELI SEKARANG
 </a>
 </div>
 
@@ -436,6 +436,106 @@ BELI SEKARANG
 </div>
 
 </section>
+    <section id="pembayaran" class="payment-section">
+  <div class="container">
+
+    <div class="section-title">
+      <span class="section-badge">💳 PEMBAYARAN</span>
+      <h2>Pilih Metode Pembayaran</h2>
+      <p>Pilih metode pembayaran yang paling nyaman untukmu</p>
+    </div>
+
+    <div class="payment-card">
+
+      <h3>💰 Metode Pembayaran</h3>
+
+      <div class="payment-grid">
+
+        <button class="payment-method" onclick="pilihPembayaran('DANA')">
+          <span class="payment-icon">💙</span>
+          <span>
+            <strong>DANA</strong>
+            <small>Pembayaran digital</small>
+          </span>
+        </button>
+
+        <button class="payment-method" onclick="pilihPembayaran('GoPay')">
+          <span class="payment-icon">💚</span>
+          <span>
+            <strong>GoPay</strong>
+            <small>Pembayaran digital</small>
+          </span>
+        </button>
+
+        <button class="payment-method" onclick="pilihPembayaran('Bank Jago')">
+          <span class="payment-icon">🏦</span>
+          <span>
+            <strong>Bank Jago</strong>
+            <small>Transfer bank</small>
+          </span>
+        </button>
+
+        <button class="payment-method" onclick="pilihPembayaran('SeaBank')">
+          <span class="payment-icon">🏦</span>
+          <span>
+            <strong>SeaBank</strong>
+            <small>Transfer bank</small>
+          </span>
+        </button>
+
+        <button class="payment-method payment-qris" onclick="pilihPembayaran('QRIS')">
+          <span class="payment-icon">📱</span>
+          <span>
+            <strong>QRIS</strong>
+            <small>Semua e-wallet & bank</small>
+          </span>
+        </button>
+
+      </div>
+
+      <div id="checkout-box" class="checkout-box">
+
+        <div class="checkout-header">
+          <span>🛒 Pesanan Kamu</span>
+        </div>
+
+        <div class="order-detail">
+          <div>
+            <small>Produk</small>
+            <strong>PGSharp Premium</strong>
+          </div>
+
+          <div>
+            <small>Paket</small>
+            <strong id="checkout-paket">Belum dipilih</strong>
+          </div>
+
+          <div>
+            <small>Metode Pembayaran</small>
+            <strong id="checkout-payment">Belum dipilih</strong>
+          </div>
+        </div>
+
+        <div class="checkout-total">
+          <span>Total</span>
+          <strong id="checkout-total">Rp0</strong>
+        </div>
+
+        <a
+          id="checkout-wa"
+          class="checkout-button"
+          href="#"
+          target="_blank"
+        >
+          📲 KONFIRMASI PESANAN
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+    </section>
 
     <section id="testimoni">
   <div class="container">
@@ -615,5 +715,55 @@ BELI SEKARANG
   💬
 </a>
 <script src="script.js"></script>
+<script>
+
+let paketDipilih = "";
+let hargaDipilih = 0;
+let metodePembayaran = "";
+
+function pilihPaket(nama, harga) {
+
+  paketDipilih = nama;
+  hargaDipilih = harga;
+
+  document.getElementById("checkout-paket").textContent = nama;
+  document.getElementById("checkout-total").textContent =
+    "Rp" + harga.toLocaleString("id-ID");
+
+  updateCheckout();
+
+  document.getElementById("checkout-box").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+function pilihPembayaran(metode) {
+
+  metodePembayaran = metode;
+
+  document.getElementById("checkout-payment").textContent =
+    metode;
+
+  updateCheckout();
+}
+
+function updateCheckout() {
+
+  if (!paketDipilih || !metodePembayaran) {
+    return;
+  }
+
+  const pesan =
+    "Halo Datzshop, saya ingin membeli PGSharp Premium.%0A%0A" +
+    "Paket: " + paketDipilih + "%0A" +
+    "Harga: Rp" + hargaDipilih.toLocaleString("id-ID") + "%0A" +
+    "Pembayaran: " + metodePembayaran + "%0A%0A" +
+    "Mohon diproses ya.";
+
+  document.getElementById("checkout-wa").href =
+    "https://wa.me/6285782039166?text=" + pesan;
+}
+
+</script>
 </body>
 </html>
