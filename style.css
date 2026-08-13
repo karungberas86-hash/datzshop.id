@@ -1534,3 +1534,28 @@ section {
     );
     box-shadow: 0 0 20px rgba(0, 217, 255, 0.25);
 }
+/* =========================
+   TOMBOL BELI SEKARANG
+========================= */
+
+.card a {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 24px;
+    border-radius: 10px;
+
+    background: linear-gradient(135deg, #00d9ff, #5146ff);
+    color: #ffffff !important;
+
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.18);
+    transition: 0.25s ease;
+}
+
+.card a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 22px rgba(0, 217, 255, 0.35);
+}
