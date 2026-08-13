@@ -716,54 +716,113 @@
 </a>
 <script src="script.js"></script>
 <script>
-
 let paketDipilih = "";
 let hargaDipilih = 0;
 let metodePembayaran = "";
 
+/* KUNCI PEMBAYARAN SAAT PAKET BELUM DIPILIH */
+function setPaymentState(aktif) {
+    const metode = document.querySelectorAll(".payment-method");
+
+    metode.forEach(function(button) {
+        button.disabled = !aktif;
+
+        if (!aktif) {
+            button.classList.remove("selected");
+        }
+    });
+}
+
+/* PILIH PAKET */
 function pilihPaket(nama, harga) {
 
-  paketDipilih = nama;
-  hargaDipilih = harga;
+    paketDipilih = nama;
+    hargaDipilih = harga;
 
-  document.getElementById("checkout-paket").textContent = nama;
-  document.getElementById("checkout-total").textContent =
-    "Rp" + harga.toLocaleString("id-ID");
+    /* Reset pembayaran ketika paket diganti */
+    metodePembayaran = "";
 
-  updateCheckout();
+    document.getElementById("checkout-paket").textContent = nama;
 
-  document.getElementById("checkout-box").scrollIntoView({
-    behavior: "smooth"
-  });
+    document.getElementById("checkout-total").textContent =
+        "Rp" + harga.toLocaleString("id-ID");
+
+    document.getElementById("checkout-payment").textContent =
+        "Belum dipilih";
+
+    /* Buka pilihan pembayaran */
+    setPaymentState(true);
+
+    /* Scroll ke pembayaran */
+    document.getElementById("pembayaran").scrollIntoView({
+        behavior: "smooth"
+    });
 }
 
+/* PILIH PEMBAYARAN */
 function pilihPembayaran(metode) {
 
-  metodePembayaran = metode;
+    if (!paketDipilih) {
+        alert("Silakan pilih paket terlebih dahulu.");
+        return;
+    }
 
-  document.getElementById("checkout-payment").textContent =
-    metode;
+    metodePembayaran = metode;
 
-  updateCheckout();
+    document.getElementById("checkout-payment").textContent =
+        metode;
+
+    /* Tandai pembayaran yang dipilih */
+    document.querySelectorAll(".payment-method").forEach(function(button) {
+        button.classList.remove("selected");
+    });
+
+    document.querySelectorAll(".payment-method").forEach(function(button) {
+
+        if (button.textContent.toLowerCase().includes(
+            metode.toLowerCase()
+        )) {
+            button.classList.add("selected");
+        }
+
+    });
+
+    updateCheckout();
 }
 
+/* UPDATE LINK WHATSAPP */
 function updateCheckout() {
 
-  if (!paketDipilih || !metodePembayaran) {
-    return;
-  }
+    if (!paketDipilih || !metodePembayaran) {
+        return;
+    }
 
-  const pesan =
-    "Halo Datzshop, saya ingin membeli PGSharp Premium.%0A%0A" +
-    "Paket: " + paketDipilih + "%0A" +
-    "Harga: Rp" + hargaDipilih.toLocaleString("id-ID") + "%0A" +
-    "Pembayaran: " + metodePembayaran + "%0A%0A" +
-    "Mohon diproses ya.";
+    const pesan =
+        "Halo Datzshop, saya ingin membeli PGSharp Premium.%0A%0A" +
+        "Paket: " + paketDipilih + "%0A" +
+        "Harga: Rp" + hargaDipilih.toLocaleString("id-ID") + "%0A" +
+        "Pembayaran: " + metodePembayaran + "%0A%0A" +
+        "Mohon diproses ya.";
 
-  document.getElementById("checkout-wa").href =
-    "https://wa.me/6285782039166?text=" + pesan;
+    document.getElementById("checkout-wa").href =
+        "https://wa.me/62857582039166?text=" + pesan;
 }
 
+/* KONDISI AWAL */
+document.addEventListener("DOMContentLoaded", function() {
+
+    setPaymentState(false);
+
+    document.getElementById("checkout-paket").textContent =
+        "Belum dipilih";
+
+    document.getElementById("checkout-payment").textContent =
+        "Belum dipilih";
+
+    document.getElementById("checkout-total").textContent =
+        "Rp0";
+
+});
 </script>
 </body>
 </html>
